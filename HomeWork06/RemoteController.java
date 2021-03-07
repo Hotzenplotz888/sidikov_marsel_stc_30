@@ -1,0 +1,4 @@
+//пульт
+public class RemoteControl{
+
+}
