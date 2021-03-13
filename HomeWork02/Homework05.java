@@ -4,7 +4,7 @@ import java.util.Arrays;
 class Homework05 {
  
   	public static void main(String[] args) {  
-		System.out.println("Enter number (first enter the amount of numbers you wish to display):");
+		System.out.println("Enter number (first enter the # of numbers you need):");
 		Scanner scanner = new Scanner(System.in);
 		int n = scanner.nextInt();
 		int numbers[] = new int[n];
@@ -17,12 +17,25 @@ class Homework05 {
 		int arr[] = numbers;
 		System.out.println("---Array BEFORE Bubble Sort---"); 
 	    printArray(arr);
-	    bubbleSort(arr);
+//	    bubbleSort(arr);
+
+		for (int i = 0; i < n; i++) {
+			for (int j = 0; j < n - 1; j++) {
+				if (arr[j] > arr[j + 1]) {
+					int temp = arr[j];
+					arr[j] = arr[j + 1];
+					arr[j + 1] = temp;
+				}
+			}
+		}
+
+
 	    System.out.println("---Array AFTER Bubble Sort---");  
 	    printArray(arr); 
   	}  
 
-   	static void bubbleSort(int[] array) {  
+// for posterity and learning
+/*   	static void bubbleSort(int[] array) {
 	    int k = array.length;  
 	    int temp = 0;  
 	    for (int i=0; i < k; i++) {
@@ -39,7 +52,7 @@ class Homework05 {
 	        	}  
 	      	}  
 	    }  
-  	} 
+  	} */
   
   	static void printArray(int[] array){
       	for(int i=0; i < array.length; i++) {  

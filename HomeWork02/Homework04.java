@@ -2,9 +2,8 @@ import java.util.Scanner;
 import java.util.Arrays;
 
 class Homework04 {
-
 	public static void main(String[] args) {
-		System.out.println("Enter number (first enter the amount of numbers you wish to display):");
+		System.out.println("Enter number (first enter the # of numbers you need):");
 		Scanner scanner = new Scanner(System.in);
 		int n = scanner.nextInt();
 		int numbers[] = new int[n];
@@ -15,26 +14,20 @@ class Homework04 {
 		
 		System.out.println(Arrays.toString(numbers));
 
-		int temp = 0;
 		int min = numbers[0];
 		int positionOfMin = 0;
 		int max = numbers[0];
 		int positionOfMax = 0;
 
 		for (int i = 0; i < numbers.length; i++) {
-
-			for (int y = i; y < numbers.length; y++) {
 				if (numbers[i] < min) {
 				min = numbers[i];
 				positionOfMin = i;
 				}
-			}
-			for (int u = i; u < numbers.length; u++) {
 				if (numbers[i] > max) {
 				max = numbers[i];
 				positionOfMax = i;
 				}
-			}
 		}
 		
 		System.out.println(min);
@@ -42,10 +35,9 @@ class Homework04 {
 		System.out.println(max);
 		System.out.println(positionOfMax);
 
-		temp = numbers[positionOfMin];
+		int temp = numbers[positionOfMin];
 		numbers[positionOfMin] = numbers[positionOfMax];
 		numbers[positionOfMax] = temp;
 		System.out.println(Arrays.toString(numbers));
-
     }
 }

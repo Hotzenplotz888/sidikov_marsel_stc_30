@@ -6,14 +6,13 @@ class HW1 {
     public static void getArraySum (int array[]) {
         int arraySum = 0;
         for (int num : array) {
-          arraySum = arraySum+num;
+          arraySum += num;
         }
         System.out.println("1.Array Sum: " + arraySum);
     }
     
     public static void reverseArray(int array[]) {
-
-        System.out.print("2.Reverse Array: ");
+    	System.out.print("2.Reverse Array: ");
 		for (int i = array.length - 1; i >= 0; i--) {
 			System.out.print(array[i]+" ");
 		}
@@ -21,7 +20,6 @@ class HW1 {
 	}
 
     public static void getArrayAverage(int array[]) {
-        System.out.flush();
 		double arrAvg = 0;
 		int nNum = 0;
         for (int i = 0; i < array.length; i++) {
@@ -48,9 +46,8 @@ class HW1 {
 			    positionOfMax = i;
 			}
 		}
-		int temp = array[positionOfMin];
-		array[positionOfMin] = array[positionOfMax];
-		array[positionOfMax] = temp;
+		array[positionOfMin] = max;
+		array[positionOfMax] = min;
 		System.out.println("4.Mirror Min and Max of Array: " + Arrays.toString(array));
     }
 	
@@ -67,31 +64,20 @@ class HW1 {
 		int arr[] = array;
 		System.out.println("---Array BEFORE Bubble Sort---"); 
 	    printArray(arr);
-	    bubbleSort(arr);
+		for (int i = 0; i < array.length; i++) {
+			for (int j = 0; j < array.length - 1; j++) {
+				if (arr[j] > arr[j + 1]) {
+					int temp = arr[j];
+					arr[j] = arr[j + 1];
+					arr[j + 1] = temp;
+				}
+			}
+		}
 	    System.out.println("---Array AFTER Bubble Sort---");  
 	    printArray(arr); 
   	}  
 
-   	static void bubbleSort(int[] array) {  
-	    int k = array.length;  
-	    int temp = 0;  
-	    for (int i=0; i < k; i++) {
-	    	System.out.println("Sort Pass Number "+(i+1)); 
-	      	for (int j=1; j < (k-i); j++) {  
-	          	System.out.println("Comparing "+ array[j-1]+ " and " + array[j]);    
-	        		if (array[j-1] > array[j]) {   
-		            temp = array[j-1];  
-		          	array[j-1] = array[j];  
-		          	array[j] = temp;  
-		            System.out.println(array[j]  + " is greater than " + array[j-1]);
-		            System.out.println("Swapping Elements: New Array After Swap");
-		          	printArray(array);
-	        	}  
-	      	}  
-	    }  
-  	} 
-  
-	static void printArray(int[] array){
+ 	static void printArray(int[] array){
       	for(int i=0; i < array.length; i++) {  
       	System.out.print(array[i] + " ");  
     } 
@@ -100,7 +86,7 @@ class HW1 {
 	
     public static void main(String[] args) {
         
-    	System.out.println("Enter number (First enter amount of numbers, you wish to process):");
+    	System.out.println("Enter number (First enter # of numbers, you need):");
 
     	Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();

@@ -7,9 +7,9 @@ class Homework01 {
         int array[] = new int[n];
         int arraySum = 0;
         
-        for (int i = 0; n != 0; i++) {
-        	arraySum += n;
-        	n = scanner.nextInt ();  
+        for (int i = 0; i < n; i++) {
+            array[i] = scanner.nextInt ();
+            arraySum += array[i];
         }
 
         System.out.println("Total: " + arraySum);

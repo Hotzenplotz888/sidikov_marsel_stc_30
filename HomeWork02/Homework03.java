@@ -5,18 +5,16 @@
 import java.util.Scanner;
 
 class Homework03 {
-	public static void main(String args[]) {
+	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		int n = scanner.nextInt();
 		int array[] = new int[n];
 		double arrAvg = 0;
-		int nNum = 0;
-        for (int i = 0; n != 0; i++) {
-        	arrAvg += n;
-        	nNum++;
-        	n = scanner.nextInt();	
-        	}
-        arrAvg /= nNum;
+		for (int i = 0; i < n; i++) {
+			array[i] = scanner.nextInt();
+			arrAvg += array[i];
+		}
+		arrAvg /= n;
         System.out.println(arrAvg);
 	}
 }

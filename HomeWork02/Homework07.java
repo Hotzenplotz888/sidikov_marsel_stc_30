@@ -9,7 +9,7 @@ class Homework07 {
 		System.out.println("Enter number of columns: ");
 		int n = scanner.nextInt();
 		
-		int [][] array = new int[m][n];
+		int[][] array = new int[m][n];
 		int s = 1;
 
 		int c = 1;
