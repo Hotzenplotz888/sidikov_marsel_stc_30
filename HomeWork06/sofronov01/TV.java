@@ -1,3 +1,5 @@
+package sofronov01;
+
 //Телевизор
 public class TV {
     // поля - компания-производитель и модель телевизора
@@ -28,9 +30,13 @@ public class TV {
     }
 
     public Program switchChannel(int index) {
-        return this.channels[index].getRandomProgram();
+        return channels[index].getRandomProgram();
     }
 
+    @Override
+    public String toString() {
+        return company + ' ' + model + ".";
+    }
 //    // метод для того, чтобы посадить в автобус пассажира
 //    public void letPassengerIn(Passenger passenger) {
 //        if (this.passengersCount < passengers.length) {

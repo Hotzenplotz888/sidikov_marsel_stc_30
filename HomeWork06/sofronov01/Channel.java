@@ -1,3 +1,5 @@
+package sofronov01;
+
 import java.util.Random;
 
 //канал
@@ -8,8 +10,8 @@ public class Channel {
 
     // массив программ, которые есть показывают на этом канале
     private Program[] programs;
-    private final int programCount;
-    private final Random random = new Random();
+    private int programCount;
+    private Random random = new Random();
 
     public Channel(String channelName) {
         this.channelName = channelName;
@@ -27,6 +29,12 @@ public class Channel {
     }
 
     public Program getRandomProgram() {
-        return this.programs[random.nextInt(programs.length)];
+
+        return programs[random.nextInt(programs.length)];
+    }
+
+    @Override
+    public String toString() {
+        return channelName;
     }
 }
