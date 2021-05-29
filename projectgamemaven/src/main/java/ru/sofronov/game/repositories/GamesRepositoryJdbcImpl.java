@@ -13,6 +13,7 @@ import java.time.LocalDateTime;
 public class GamesRepositoryJdbcImpl implements GamesRepository {
     // язык SQL
     private static final String SQL_FIND_BY_ID = "select * from game where id = ?";
+    //language=SQL
 
     static private final RowMapper<Game> gameRowMapper = row -> Game.builder()
             .id(row.getLong("Id"))
